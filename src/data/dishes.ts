@@ -1,5 +1,5 @@
 export interface Dish {
-    category: 'tuna' | 'salmon';
+    category: 'salmon';
     title: string;
     title_es?: string;
     title_ru?: string;
@@ -25,6 +25,9 @@ export interface Dish {
     cost: string;
     pvp: string;
     margin: string;
+    prepTime: string;
+    prepTime_es?: string;
+    prepTime_ru?: string;
 }
 
 export const dishData: Record<string, Dish> = {
@@ -89,7 +92,10 @@ export const dishData: Record<string, Dish> = {
         equipment_ru: 'Слайсер, Холодильник.',
         cost: '€5.80',
         pvp: '€24.00',
-        margin: '+€18.20'
+        margin: '+€18.20',
+        prepTime: '15 min',
+        prepTime_es: '15 min',
+        prepTime_ru: '15 мин'
     },
     'salmon-miso': {
         category: 'salmon',
@@ -150,7 +156,10 @@ export const dishData: Record<string, Dish> = {
         equipment_ru: 'Мощная горелка, Диспенсер.',
         cost: '€7.50',
         pvp: '€32.00',
-        margin: '+€24.50'
+        margin: '+€24.50',
+        prepTime: '15-20 min',
+        prepTime_es: '15-20 min',
+        prepTime_ru: '15-20 мин'
     },
     'salmon-avocado': {
         category: 'salmon',
@@ -220,7 +229,10 @@ export const dishData: Record<string, Dish> = {
         equipment_ru: 'Слайсер (лук), Шеф-нож.',
         cost: '€5.50',
         pvp: '€22.00',
-        margin: '+€16.50'
+        margin: '+€16.50',
+        prepTime: '15 min',
+        prepTime_es: '15 min',
+        prepTime_ru: '15 мин'
     },
     'salmon-prawns': {
         category: 'salmon',
@@ -287,7 +299,11 @@ export const dishData: Record<string, Dish> = {
         equipment_ru: 'Пароконвектомат, Кисть.',
         cost: '€7.50',
         pvp: '€29.00',
-        margin: '+€21.50'
+        margin: '+€21.50',
+
+        prepTime: '20 min',
+        prepTime_es: '20 min',
+        prepTime_ru: '20 мин'
     },
     'prawn-carpaccio': {
         category: 'salmon',
@@ -351,7 +367,10 @@ export const dishData: Record<string, Dish> = {
         equipment_ru: 'Пищевая пленка, Сотейник (для отбивания), Пинцет.',
         cost: '€8.50',
         pvp: '€29.00',
-        margin: '+€20.50'
+        margin: '+€20.50',
+        prepTime: '15 min',
+        prepTime_es: '15 min',
+        prepTime_ru: '15 мин'
     },
     'salmon-purple': {
         category: 'salmon',
@@ -421,7 +440,10 @@ export const dishData: Record<string, Dish> = {
         equipment_ru: 'Шеф-нож, Пинцет, Соусник.',
         cost: '€6.20',
         pvp: '€24.00',
-        margin: '+€17.80'
+        margin: '+€17.80',
+        prepTime: '15 min',
+        prepTime_es: '15 min',
+        prepTime_ru: '15 мин'
     },
     'salmon-tournedos': {
         category: 'salmon',
@@ -485,7 +507,10 @@ export const dishData: Record<string, Dish> = {
         equipment_ru: 'Пароконвектомат, Микроволновка, Горелка, Кулинарная нить.',
         cost: '€4.00',
         pvp: '€25.00',
-        margin: '+€21.00'
+        margin: '+€21.00',
+        prepTime: '20 min',
+        prepTime_es: '20 min',
+        prepTime_ru: '20 мин'
     },
     'salmon-ruby': {
         category: 'salmon',
@@ -552,7 +577,10 @@ export const dishData: Record<string, Dish> = {
         equipment_ru: 'Пароконвектомат, Блендер, Сито, Горелка.',
         cost: '€4.80',
         pvp: '€26.00',
-        margin: '+€21.20'
+        margin: '+€21.20',
+        prepTime: '20 min',
+        prepTime_es: '20 min',
+        prepTime_ru: '20 мин'
     },
     'salmon-emerald': {
         category: 'salmon',

@@ -88,7 +88,7 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
             <h2 id="modal-title"></h2>
             <div class="ficha-meta">
               <span><strong data-i18n="modal_servings">Servings:</strong> 1 person</span>
-              <span><strong data-i18n="modal_prep">Prep Time:</strong> &lt; 5 min</span>
+              <span><strong data-i18n="modal_prep">Prep Time:</strong> <span id="modal-prep-time">15-20 min</span></span>
             </div>
           </div>
 
@@ -185,7 +185,7 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
         hero_btn: "Explore the Menu",
         intro_title: "The Concept: <br />“Raw, Rare & Crispy”",
         intro_desc:
-          "We combine the prestige of Bluefin Tuna with high-precision technology (Sous-Vide, Aburi, Slicing) to deliver Michelin-level quality without the need for a full stovetop kitchen.",
+          "We combine the prestige of Scottish Salmon with high-precision technology (Sous-Vide, Aburi, Slicing) to deliver Michelin-level quality without the need for a full stovetop kitchen.",
         feat_vip_title: "VIP Aesthetics",
         feat_vip_desc: "Plating designed for the Balearic/Estepona upscale lifestyle.",
         feat_ops_title: "Smart Ops",
@@ -208,7 +208,7 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
         vibe_title: "More Than Just Food",
         vibe_desc: "13 Degrees is where Estepona’s soul meets high-end mixology and vibrant social life.",
         cta_title: "YOUR MENU COULD BE LIKE THIS TOMORROW",
-        cta_desc: "We created a system where premium product (tuna & salmon) meets smart technology. No extra staff. No waste. Only taste and profit.",
+        cta_desc: "We created a system where premium product (premium salmon) meets smart technology. No extra staff. No waste. Only taste and profit.",
         cta_btn: "Discuss launch with Julia",
         footer_text: "Full project developed for 13 Degrees Lounge BAR.",
         view_details: "VIEW DETAILS",
@@ -220,7 +220,7 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
         hero_desc: "Concepto Smart Luxury: Gastronomía de alta gama con cero estrés en cocina.",
         hero_btn: "Explorar el Menú",
         intro_title: "El Concepto: <br />“Raw, Rare & Crispy”",
-        intro_desc: "Combinamos el prestigio del Atún Rojo con tecnología de alta precisión (Sous-Vide, Aburi, Corte) para ofrecer calidad Michelin sin necesidad de fogones.",
+        intro_desc: "Combinamos el prestigio del Salmón Escocés con tecnología de alta precisión (Sous-Vide, Aburi, Corte) para ofrecer calidad Michelin sin necesidad de fogones.",
         feat_vip_title: "Estética VIP",
         feat_vip_desc: "Emplatado diseñado para el estilo de vida exclusivo de Estepona/Baleares.",
         feat_ops_title: "Operativa Inteligente",
@@ -243,7 +243,7 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
         vibe_title: "Más que solo comida",
         vibe_desc: "13 Degrees es donde el alma de Estepona se encuentra con la alta coctelería y la vida social vibrante.",
         cta_title: "TU MENÚ PODRÍA SER ASÍ MAÑANA",
-        cta_desc: "Creamos un sistema donde el producto premium (atún y salmón) se une a la tecnología inteligente. Sin personal extra. Sin mermas. Solo sabor y beneficio.",
+        cta_desc: "Creamos un sistema donde el producto premium (salmón premium) se une a la tecnología inteligente. Sin personal extra. Sin mermas. Solo sabor y beneficio.",
         cta_btn: "Hablar del lanzamiento con Julia",
         footer_text: "Proyecto completo desarrollado para 13 Degrees Lounge BAR.",
         view_details: "VER DETALLES",
@@ -255,12 +255,12 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
         hero_desc: "Концепция Smart Luxury: Высокая гастрономия без стресса на кухне.",
         hero_btn: "Смотреть Меню",
         intro_title: "Концепция: <br />“Raw, Rare & Crispy”",
-        intro_desc: "Мы объединяем престиж Голубого Тунца с высокими технологиями (Су-вид, Абури, Нарезка), чтобы дать качество уровня Michelin без полноценной горячей кухни.",
+        intro_desc: "Мы объединяем престиж Шотландского Лосося с высокими технологиями (Су-вид, Абури, Нарезка), чтобы дать качество уровня Michelin без полноценной горячей кухни.",
         feat_vip_title: "VIP Эстетика",
         feat_vip_desc: "Подача, созданная для роскошного стиля жизни Эстепоны и Балеар.",
         feat_ops_title: "Умная Операционка",
         feat_ops_desc: "90% заготовка, 10% сервис. Никакого стресса для шефа в час пик.",
-        menu_title: "СЕВЕРЫЙ И АЗИАТСКИЙ ФЬЮЖН: ЛОСОСЬ",
+        menu_title: "СЕВЕРНЫЙ И АЗИАТСКИЙ ФЬЮЖН: ЛОСОСЬ",
         menu_desc: "Высокая гастрономия в каждом кусочке. Текстуры, температуры и идеальный баланс с белыми винами.",
         btn_info: "ИНФО И ТЕХ. КАРТА",
         btn_image: "ТОЛЬКО ФОТО",
@@ -278,7 +278,7 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
         vibe_title: "Больше, чем просто еда",
         vibe_desc: "13 Degrees — это место, где душа Эстепоны встречается с высокой миксологией и яркой светской жизнью.",
         cta_title: "ВАШЕ МЕНЮ МОЖЕТ БЫТЬ ТАКИМ УЖЕ ЗАВТРА",
-        cta_desc: "Мы создали систему, где премиальный продукт (тунец и лосось) встречается с умными технологиями. Без лишнего персонала. Без списаний. Только вкус и прибыль.",
+        cta_desc: "Мы создали систему, где премиальный продукт (премиальный лосось) встречается с умными технологиями. Без лишнего персонала. Без списаний. Только вкус и прибыль.",
         cta_btn: "Обсудить запуск с Юлией",
         footer_text: "Полный проект разработан для 13 Degrees Lounge BAR.",
         view_details: "ДЕТАЛИ",
@@ -443,9 +443,11 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
           const sauce = currentLang === "en" ? data.sauce : data[`sauce_${currentLang}`] || data.sauce;
           const steps = currentLang === "en" ? data.steps : data[`steps_${currentLang}`] || data.steps;
           const equipment = currentLang === "en" ? data.equipment : data[`equipment_${currentLang}`] || data.equipment;
+          const prepTime = currentLang === "en" ? data.prepTime : data[`prepTime_${currentLang}`] || data.prepTime;
 
           modalImg.src = data.img;
           modalTitle.textContent = title;
+          document.getElementById("modal-prep-time").textContent = prepTime;
           modalIngredients.innerHTML = ingredients.map((i) => `<li>${i}</li>`).join("");
           modalSauce.innerHTML = sauce;
           modalSteps.innerHTML = steps.map((s) => `<li>${s}</li>`).join("");
