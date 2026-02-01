@@ -1,315 +1,320 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import MenuCard from '../components/MenuCard.astro';
-import { dishData } from '../data/dishes';
+import Layout from "../layouts/Layout.astro";
+import MenuCard from "../components/MenuCard.astro";
+import { dishData } from "../data/dishes";
 
 const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
 ---
 
 <Layout title="13 DEGREES | BLUEFIN MENU ARCHITECTURE">
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="eyebrow">Exclusive Presentation</span>
-            <h1>13 Degrees: <br><span class="highlight">The Exclusive Collections</span></h1>
-            <p>Smart Luxury Concept: High-end gastronomy with zero kitchen stress.</p>
-            <a href="#menu" class="btn-primary">Explore the Menu</a>
-        </div>
-    </header>
-
-    <section class="intro">
-        <div class="container">
-            <div class="intro-grid">
-                <div class="intro-text">
-                    <h2>The Concept: <br>“Raw, Rare & Crispy”</h2>
-                    <p>We combine the prestige of Bluefin Tuna with high-precision technology (Sous-Vide, Aburi, Slicing) to deliver Michelin-level quality without the need for a full stovetop kitchen.</p>
-                </div>
-                <div class="intro-features">
-                    <div class="feature-item">
-                        <span class="feature-icon">✨</span>
-                        <h3>VIP Aesthetics</h3>
-                        <p>Plating designed for the Balearic/Estepona upscale lifestyle.</p>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">⚡</span>
-                        <h3>Smart Ops</h3>
-                        <p>90% prep, 10% service. No stress for the chef during peak hours.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="menu" class="menu-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>NORDIC & ASIAN FUSION: SALMON</h2>
-                <p>High gastronomy in every bite. Textures, temperatures, and perfect balance with white wines.</p>
-            </div>
-
-            <!-- Category Switcher -->
-            <nav class="category-nav">
-                <button class="category-btn active" data-category="tuna">Bluefin Tuna Collection</button>
-                <button class="category-btn" data-category="salmon">Salmon Collection</button>
-            </nav>
-
-            <div class="menu-grid">
-                {dishes.map(({ key, dish }) => (
-                    <MenuCard 
-                        id={key} 
-                        dish={dish} 
-                        style={`display: ${dish.category === 'tuna' ? 'block' : 'none'}`}
-                    />
-                ))}
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Modal for Kitchen Technical Cards -->
-    <div id="modal" class="modal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-container">
-            <button class="modal-close">&times;</button>
-            
-            <div class="modal-content">
-                <!-- Image Container (Shrinks and slides up) -->
-                <div class="modal-image-box">
-                    <img id="modal-img" src="" alt="">
-                    <button class="btn-info-trigger">INFO & TECHNICAL SHEET</button>
-                    <button class="btn-close-sheet">VIEW IMAGE ONLY</button>
-                </div>
-
-                <!-- Technical Card (Slides up from below) -->
-                <div class="modal-tech-card">
-                    <div class="ficha-header">
-                        <span class="ficha-label">KITCHEN TECHNICAL SHEET</span>
-                        <h2 id="modal-title"></h2>
-                        <div class="ficha-meta">
-                            <span><strong>Servings:</strong> 1 person</span>
-                            <span><strong>Prep Time:</strong> &lt; 5 min</span>
-                        </div>
-                    </div>
-
-                    <div class="ficha-body">
-                        <div class="ficha-column">
-                            <h3><span class="icon">🥗</span> INGREDIENTS</h3>
-                            <ul id="modal-ingredients" class="kitchen-list"></ul>
-                        </div>
-                        <div class="ficha-column">
-                            <h3><span class="icon">🍳</span> PREPARATION</h3>
-                            <div class="sauce-block">
-                                <h4>Sauce & Base:</h4>
-                                <p id="modal-sauce"></p>
-                            </div>
-                            <ol id="modal-steps" class="kitchen-steps"></ol>
-                        </div>
-                    </div>
-
-                    <div class="ficha-equipment">
-                        <h3><span class="icon">🛠️</span> EQUIPMENT</h3>
-                        <p id="modal-equi"></p>
-                    </div>
-
-                    <div class="ficha-footer">
-                        <div class="cost-item">
-                            <span class="label">FOOD COST (MATERIA PRIMA)</span>
-                            <span id="modal-cost" class="value"></span>
-                        </div>
-                        <div class="cost-item">
-                            <span class="label">PVP (PRECIO VENTA)</span>
-                            <span id="modal-pvp" class="value highlight"></span>
-                        </div>
-                        <div class="cost-item highlight-box">
-                            <span class="label">PROFIT MARGIN</span>
-                            <span id="modal-margin" class="value profit"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Exclusive Presentation</span>
+      <h1>13 Degrees: <br /><span class="highlight">The Exclusive Collections</span></h1>
+      <p>Smart Luxury Concept: High-end gastronomy with zero kitchen stress.</p>
+      <a href="#menu" class="btn-primary">Explore the Menu</a>
     </div>
+  </header>
 
-    <!-- Atmosphere & Lifestyle Section -->
-    <section class="atmosphere">
-        <div class="parallax-bg" style="background-image: url('/assets/Facebook/471294467_122130011582572577_8444876307954081098_n.jpg');"></div>
-        <div class="atmosphere-overlay"></div>
-        <div class="container relative">
-            <div class="section-title">
-                <span class="eyebrow">The Vibe</span>
-                <h2>More Than Just Food</h2>
-                <p>13 Degrees is where Estepona’s soul meets high-end mixology and vibrant social life.</p>
+  <section class="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <h2>The Concept: <br />“Raw, Rare & Crispy”</h2>
+          <p>We combine the prestige of Bluefin Tuna with high-precision technology (Sous-Vide, Aburi, Slicing) to deliver Michelin-level quality without the need for a full stovetop kitchen.</p>
+        </div>
+        <div class="intro-features">
+          <div class="feature-item">
+            <span class="feature-icon">✨</span>
+            <h3>VIP Aesthetics</h3>
+            <p>Plating designed for the Balearic/Estepona upscale lifestyle.</p>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⚡</span>
+            <h3>Smart Ops</h3>
+            <p>90% prep, 10% service. No stress for the chef during peak hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>NORDIC & ASIAN FUSION: SALMON</h2>
+        <p>High gastronomy in every bite. Textures, temperatures, and perfect balance with white wines.</p>
+      </div>
+
+      <!-- Category Switcher -->
+      <nav class="category-nav">
+        <button class="category-btn" data-category="tuna" style="display: none;">Bluefin Tuna Collection</button>
+        <button class="category-btn active" data-category="salmon">Salmon Collection</button>
+      </nav>
+
+      <div class="menu-grid">
+        {dishes.map(({ key, dish }) => <MenuCard id={key} dish={dish} style={`display: ${dish.category === "salmon" ? "block" : "none"}`} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Modal for Kitchen Technical Cards -->
+  <div id="modal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-container">
+      <button class="modal-close">&times;</button>
+
+      <div class="modal-content">
+        <!-- Image Container (Shrinks and slides up) -->
+        <div class="modal-image-box">
+          <img id="modal-img" src="" alt="" />
+          <button class="btn-info-trigger">INFO & TECHNICAL SHEET</button>
+          <button class="btn-close-sheet">VIEW IMAGE ONLY</button>
+        </div>
+
+        <!-- Technical Card (Slides up from below) -->
+        <div class="modal-tech-card">
+          <div class="ficha-header">
+            <span class="ficha-label">KITCHEN TECHNICAL SHEET</span>
+            <h2 id="modal-title"></h2>
+            <div class="ficha-meta">
+              <span><strong>Servings:</strong> 1 person</span>
+              <span><strong>Prep Time:</strong> &lt; 5 min</span>
             </div>
-            
-            <div class="lifestyle-grid">
-                <div class="lifestyle-item reveal">
-                    <img src="/assets/Facebook/471170183_122128362296572577_6777743808295086014_n.jpg" alt="Vibe 1" loading="lazy" decoding="async">
-                </div>
-                <div class="lifestyle-item reveal">
-                    <img src="/assets/Facebook/471200641_122130011354572577_5012237729507196814_n.jpg" alt="Vibe 2" loading="lazy" decoding="async">
-                </div>
-                <div class="lifestyle-item reveal">
-                    <img src="/assets/Facebook/Boss_n.jpg" alt="Vibe 3" loading="lazy" decoding="async">
-                </div>
-                <div class="lifestyle-item reveal">
-                    <img src="/assets/Facebook/470681455_122128164530572577_3967992789855390523_n.jpg" alt="Vibe 4" loading="lazy" decoding="async">
-                </div>
+          </div>
+
+          <div class="ficha-body">
+            <div class="ficha-column">
+              <h3><span class="icon">🥗</span> INGREDIENTS</h3>
+              <ul id="modal-ingredients" class="kitchen-list"></ul>
             </div>
+            <div class="ficha-column">
+              <h3><span class="icon">🍳</span> PREPARATION</h3>
+              <div class="sauce-block">
+                <h4>Sauce & Base:</h4>
+                <p id="modal-sauce"></p>
+              </div>
+              <ol id="modal-steps" class="kitchen-steps"></ol>
+            </div>
+          </div>
+
+          <div class="ficha-equipment">
+            <h3><span class="icon">🛠️</span> EQUIPMENT</h3>
+            <p id="modal-equi"></p>
+          </div>
+
+          <div class="ficha-footer">
+            <div class="cost-item">
+              <span class="label">FOOD COST (MATERIA PRIMA)</span>
+              <span id="modal-cost" class="value"></span>
+            </div>
+            <div class="cost-item">
+              <span class="label">PVP (PRECIO VENTA)</span>
+              <span id="modal-pvp" class="value highlight"></span>
+            </div>
+            <div class="cost-item highlight-box">
+              <span class="label">PROFIT MARGIN</span>
+              <span id="modal-margin" class="value profit"></span>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
-    <!-- Final CTA Section -->
-    <section class="cta-banner reveal">
-        <div class="container text-center">
-            <h2>YOUR MENU COULD BE LIKE THIS TOMORROW</h2>
-            <p>We created a system where premium product (tuna & salmon) meets smart technology. No extra staff. No waste. Only taste and profit.</p>
-            <a href="https://wa.me/48537617365" target="_blank" class="btn-primary">Discuss launch with Julia</a>
+  <!-- Atmosphere & Lifestyle Section -->
+  <section class="atmosphere">
+    <div class="parallax-bg" style="background-image: url('/assets/Facebook/471294467_122130011582572577_8444876307954081098_n.jpg');"></div>
+    <div class="atmosphere-overlay"></div>
+    <div class="container relative">
+      <div class="section-title">
+        <span class="eyebrow">The Vibe</span>
+        <h2>More Than Just Food</h2>
+        <p>13 Degrees is where Estepona’s soul meets high-end mixology and vibrant social life.</p>
+      </div>
+
+      <div class="lifestyle-grid">
+        <div class="lifestyle-item reveal">
+          <img src="/assets/Facebook/471170183_122128362296572577_6777743808295086014_n.jpg" alt="Vibe 1" loading="lazy" decoding="async" />
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <h2>13 DEGREES | LOUNGE BAR</h2>
-            <p>Full project developed for 13 Degrees Lounge BAR.</p>
+        <div class="lifestyle-item reveal">
+          <img src="/assets/Facebook/471200641_122130011354572577_5012237729507196814_n.jpg" alt="Vibe 2" loading="lazy" decoding="async" />
         </div>
-    </footer>
+        <div class="lifestyle-item reveal">
+          <img src="/assets/Facebook/Boss_n.jpg" alt="Vibe 3" loading="lazy" decoding="async" />
+        </div>
+        <div class="lifestyle-item reveal">
+          <img src="/assets/Facebook/470681455_122128164530572577_3967992789855390523_n.jpg" alt="Vibe 4" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script define:vars={{ dishData }}>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('modal');
-            const modalContent = document.querySelector('.modal-content');
-            const modalImg = document.getElementById('modal-img');
-            const modalTitle = document.getElementById('modal-title');
-            const modalIngredients = document.getElementById('modal-ingredients');
-            const modalSauce = document.getElementById('modal-sauce');
-            const modalSteps = document.getElementById('modal-steps');
-            const modalEqui = document.getElementById('modal-equi');
-            const modalCost = document.getElementById('modal-cost');
-            const modalPvp = document.getElementById('modal-pvp');
-            const modalMargin = document.getElementById('modal-margin');
-            
-            const menuSection = document.querySelector('.menu-grid');
-            const categoryBtns = document.querySelectorAll('.category-btn');
+  <!-- Final CTA Section -->
+  <section class="cta-banner reveal">
+    <div class="container text-center">
+      <h2>YOUR MENU COULD BE LIKE THIS TOMORROW</h2>
+      <p>We created a system where premium product (tuna & salmon) meets smart technology. No extra staff. No waste. Only taste and profit.</p>
+      <a href="https://wa.me/48537617365" target="_blank" class="btn-primary">Discuss launch with Julia</a>
+    </div>
+  </section>
 
-            // 1. Intersection Observer for Scroll Animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
+  <footer class="footer">
+    <div class="container">
+      <h2>13 DEGREES | LOUNGE BAR</h2>
+      <p>Full project developed for 13 Degrees Lounge BAR.</p>
+    </div>
+  </footer>
 
-            document.querySelectorAll('.reveal, .economic-box, .lifestyle-item').forEach(el => {
-                observer.observe(el);
-            });
+  <script define:vars={{ dishData }}>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = document.getElementById("modal");
+      const modalContent = document.querySelector(".modal-content");
+      const modalImg = document.getElementById("modal-img");
+      const modalTitle = document.getElementById("modal-title");
+      const modalIngredients = document.getElementById("modal-ingredients");
+      const modalSauce = document.getElementById("modal-sauce");
+      const modalSteps = document.getElementById("modal-steps");
+      const modalEqui = document.getElementById("modal-equi");
+      const modalCost = document.getElementById("modal-cost");
+      const modalPvp = document.getElementById("modal-pvp");
+      const modalMargin = document.getElementById("modal-margin");
 
-            // 2. Category Switching Logic
-            categoryBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const category = btn.dataset.category;
-                    
-                    categoryBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
+      const menuSection = document.querySelector(".menu-grid");
+      const categoryBtns = document.querySelectorAll(".category-btn");
 
-                    // Animation effect
-                    menuSection.style.opacity = '0';
-                    setTimeout(() => {
-                        document.querySelectorAll('.menu-card').forEach(card => {
-                           if (card.dataset.category === category) {
-                               card.style.display = 'block';
-                           } else {
-                               card.style.display = 'none';
-                           }
-                        });
-                        menuSection.style.opacity = '1';
-                    }, 300);
-                });
-            });
-
-            // 3. Modal Logic (Event Delegation)
-            menuSection.addEventListener('click', (e) => {
-                const card = e.target.closest('.menu-card');
-                if (!card) return;
-
-                const dishKey = card.dataset.dish;
-                const data = dishData[dishKey];
-
-                if (data) {
-                    modalImg.src = data.img;
-                    modalTitle.textContent = data.title;
-                    modalIngredients.innerHTML = data.ingredients.map(i => `<li>${i}</li>`).join('');
-                    modalSauce.innerHTML = data.sauce;
-                    modalSteps.innerHTML = data.steps.map(s => `<li>${s}</li>`).join('');
-                    modalEqui.textContent = data.equipment;
-                    modalCost.textContent = data.cost;
-                    modalPvp.textContent = data.pvp;
-                    modalMargin.textContent = data.margin;
-
-                    modal.classList.add('active');
-                    modalContent.classList.remove('sheet-active');
-                    document.body.classList.add('modal-open');
-                }
-            });
-
-            // 4. Modal Interactions
-            const btnInfo = document.querySelector('.btn-info-trigger');
-            if(btnInfo) {
-                btnInfo.addEventListener('click', () => {
-                    modalContent.classList.add('sheet-active');
-                });
+      // 1. Intersection Observer for Scroll Animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
             }
+          });
+        },
+        { threshold: 0.1 },
+      );
 
-            const btnCloseSheet = document.querySelector('.btn-close-sheet');
-            if(btnCloseSheet) {
-                btnCloseSheet.addEventListener('click', () => {
-                    modalContent.classList.remove('sheet-active');
-                });
-            }
+      document.querySelectorAll(".reveal, .economic-box, .lifestyle-item").forEach((el) => {
+        observer.observe(el);
+      });
 
-            const closeModal = () => {
-                modal.classList.remove('active');
-                document.body.classList.remove('modal-open');
-            };
+      // 2. Category Switching Logic
+      categoryBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const category = btn.dataset.category;
 
-            document.querySelector('.modal-close').addEventListener('click', closeModal);
-            document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+          categoryBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
 
-            // 5. Parallax Effect
-            const parallaxBg = document.querySelector('.parallax-bg');
-            let scrollTimeout;
-            window.addEventListener('scroll', () => {
-                if (!parallaxBg) return;
-                if (!scrollTimeout) {
-                    window.requestAnimationFrame(() => {
-                        const speed = 0.5;
-                        const rect = parallaxBg.parentElement.getBoundingClientRect();
-                        const offset = window.pageYOffset - rect.top;
-                        parallaxBg.style.transform = `translateY(${offset * speed}px)`;
-                        scrollTimeout = null;
-                    });
-                    scrollTimeout = true;
-                }
-            }, { passive: true });
-
-            // 6. Ambient Glow (Desktop)
-            if (window.innerWidth > 1024) {
-                const glow = document.createElement('div');
-                glow.className = 'glow-accent';
-                document.body.appendChild(glow);
-
-                let mouseTimeout;
-                window.addEventListener('mousemove', (e) => {
-                    if (!mouseTimeout) {
-                        window.requestAnimationFrame(() => {
-                            glow.style.left = `${e.clientX - 150}px`;
-                            glow.style.top = `${e.clientY - 150}px`;
-                            glow.style.opacity = '1';
-                            mouseTimeout = null;
-                        });
-                        mouseTimeout = true;
-                    }
-                }, { passive: true });
-            }
+          // Animation effect
+          menuSection.style.opacity = "0";
+          setTimeout(() => {
+            document.querySelectorAll(".menu-card").forEach((card) => {
+              if (card.dataset.category === category) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+            menuSection.style.opacity = "1";
+          }, 300);
         });
-    </script>
+      });
+
+      // 3. Modal Logic (Event Delegation)
+      menuSection.addEventListener("click", (e) => {
+        const card = e.target.closest(".menu-card");
+        if (!card) return;
+
+        const dishKey = card.dataset.dish;
+        const data = dishData[dishKey];
+
+        if (data) {
+          modalImg.src = data.img;
+          modalTitle.textContent = data.title;
+          modalIngredients.innerHTML = data.ingredients.map((i) => `<li>${i}</li>`).join("");
+          modalSauce.innerHTML = data.sauce;
+          modalSteps.innerHTML = data.steps.map((s) => `<li>${s}</li>`).join("");
+          modalEqui.textContent = data.equipment;
+          modalCost.textContent = data.cost;
+          modalPvp.textContent = data.pvp;
+          modalMargin.textContent = data.margin;
+
+          modal.classList.add("active");
+          modalContent.classList.remove("sheet-active");
+          document.body.classList.add("modal-open");
+        }
+      });
+
+      // 4. Modal Interactions
+      const btnInfo = document.querySelector(".btn-info-trigger");
+      if (btnInfo) {
+        btnInfo.addEventListener("click", () => {
+          modalContent.classList.add("sheet-active");
+        });
+      }
+
+      const btnCloseSheet = document.querySelector(".btn-close-sheet");
+      if (btnCloseSheet) {
+        btnCloseSheet.addEventListener("click", () => {
+          modalContent.classList.remove("sheet-active");
+        });
+      }
+
+      const closeModal = () => {
+        modal.classList.remove("active");
+        document.body.classList.remove("modal-open");
+      };
+
+      document.querySelector(".modal-close").addEventListener("click", closeModal);
+      document.querySelector(".modal-backdrop").addEventListener("click", closeModal);
+
+      // 5. Parallax Effect
+      const parallaxBg = document.querySelector(".parallax-bg");
+      let scrollTimeout;
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!parallaxBg) return;
+          if (!scrollTimeout) {
+            window.requestAnimationFrame(() => {
+              const speed = 0.5;
+              const rect = parallaxBg.parentElement.getBoundingClientRect();
+              const offset = window.pageYOffset - rect.top;
+              parallaxBg.style.transform = `translateY(${offset * speed}px)`;
+              scrollTimeout = null;
+            });
+            scrollTimeout = true;
+          }
+        },
+        { passive: true },
+      );
+
+      // 6. Ambient Glow (Desktop)
+      if (window.innerWidth > 1024) {
+        const glow = document.createElement("div");
+        glow.className = "glow-accent";
+        document.body.appendChild(glow);
+
+        let mouseTimeout;
+        window.addEventListener(
+          "mousemove",
+          (e) => {
+            if (!mouseTimeout) {
+              window.requestAnimationFrame(() => {
+                glow.style.left = `${e.clientX - 150}px`;
+                glow.style.top = `${e.clientY - 150}px`;
+                glow.style.opacity = "1";
+                mouseTimeout = null;
+              });
+              mouseTimeout = true;
+            }
+          },
+          { passive: true },
+        );
+      }
+    });
+  </script>
 </Layout>
