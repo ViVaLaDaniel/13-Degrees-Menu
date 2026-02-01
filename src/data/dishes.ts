@@ -390,7 +390,7 @@ export const dishData: Record<string, Dish> = {
     'salmon-emerald': {
         category: 'salmon',
         title: 'Costra "Esmeralda" (Emerald Crust)',
-        description: 'Baked salmon under a warm avocado-spinach mousse with a crunchy pistachio crust.',
+        description: 'Baked salmon under a warm avocado mousse with a crunchy pistachio crust.',
         winePairing: 'Sauvignon Blanc / Vermentino',
         img: '/assets/salmon_emerald_crust.png',
         ingredients: [
@@ -398,12 +398,12 @@ export const dishData: Record<string, Dish> = {
             '1 Avocado (Ripe)',
             '30g Pistachios (Chopped)',
             '20g Sun-dried Tomatoes',
-            'Fresh Spinach (for color)',
+            'Micro-greens (for garnish)',
             'Cream 33%'
         ],
-        sauce: '<strong>Avocado-Pistachio Mousse:</strong> Warm cream of avocado, spinach, and parmesan. Nutty, creamy, and vibrant green.',
+        sauce: '<strong>Avocado-Pistachio Mousse:</strong> Warm cream of avocado and parmesan. Nutty, creamy, and vibrant green.',
         steps: [
-            '<strong>Prep:</strong> Blend avocado, spinach, cream, and sun-dried tomatoes into a mousse. Chop pistachios.',
+            '<strong>Prep:</strong> Blend avocado, cream, and sun-dried tomatoes into a mousse. Chop pistachios.',
             '<strong>Cook:</strong> Bake salmon fillet at 180°C for 10 min (80% done).',
             '<strong>Crust:</strong> Pipe avocado mousse on top, cover generously with pistachio crumbs.',
             '<strong>Finish:</strong> Bake for 2 more mins (Gratin) to warm the mousse without browning.',
