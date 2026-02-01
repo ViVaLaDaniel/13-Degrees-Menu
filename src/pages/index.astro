@@ -7,13 +7,23 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
 ---
 
 <Layout title="13 DEGREES | BLUEFIN MENU ARCHITECTURE">
+  <!-- Language Switcher -->
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <span class="sep">|</span>
+    <button class="lang-btn" data-lang="es">ES</button>
+    <span class="sep">|</span>
+    <button class="lang-btn" data-lang="ru">RU</button>
+  </div>
+
   <header class="hero">
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
-      <span class="eyebrow">Exclusive Presentation</span>
-      <h1>13 Degrees: <br /><span class="highlight">The Exclusive Collections</span></h1>
-      <p>Smart Luxury Concept: High-end gastronomy with zero kitchen stress.</p>
-      <a href="#menu" class="btn-primary">Explore the Menu</a>
+      <span class="eyebrow" data-i18n="hero_eyebrow">Exclusive Presentation</span>
+      <h1 data-i18n="hero_title">13 Degrees: <br /><span class="highlight">The Exclusive Collections</span></h1>
+      <p data-i18n="hero_desc">Smart Luxury Concept: High-end gastronomy with zero kitchen stress.</p>
+      <a href="#menu" class="btn-primary" data-i18n="hero_btn">Explore the Menu</a>
     </div>
   </header>
 
@@ -21,19 +31,21 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
     <div class="container">
       <div class="intro-grid">
         <div class="intro-text">
-          <h2>The Concept: <br />“Raw, Rare & Crispy”</h2>
-          <p>We combine the prestige of Bluefin Tuna with high-precision technology (Sous-Vide, Aburi, Slicing) to deliver Michelin-level quality without the need for a full stovetop kitchen.</p>
+          <h2 data-i18n="intro_title">The Concept: <br />“Raw, Rare & Crispy”</h2>
+          <p data-i18n="intro_desc">
+            We combine the prestige of Bluefin Tuna with high-precision technology (Sous-Vide, Aburi, Slicing) to deliver Michelin-level quality without the need for a full stovetop kitchen.
+          </p>
         </div>
         <div class="intro-features">
           <div class="feature-item">
             <span class="feature-icon">✨</span>
-            <h3>VIP Aesthetics</h3>
-            <p>Plating designed for the Balearic/Estepona upscale lifestyle.</p>
+            <h3 data-i18n="feat_vip_title">VIP Aesthetics</h3>
+            <p data-i18n="feat_vip_desc">Plating designed for the Balearic/Estepona upscale lifestyle.</p>
           </div>
           <div class="feature-item">
             <span class="feature-icon">⚡</span>
-            <h3>Smart Ops</h3>
-            <p>90% prep, 10% service. No stress for the chef during peak hours.</p>
+            <h3 data-i18n="feat_ops_title">Smart Ops</h3>
+            <p data-i18n="feat_ops_desc">90% prep, 10% service. No stress for the chef during peak hours.</p>
           </div>
         </div>
       </div>
@@ -43,18 +55,13 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
   <section id="menu" class="menu-section">
     <div class="container">
       <div class="section-title">
-        <h2>NORDIC & ASIAN FUSION: SALMON</h2>
-        <p>High gastronomy in every bite. Textures, temperatures, and perfect balance with white wines.</p>
+        <h2 data-i18n="menu_title">NORDIC & ASIAN FUSION: SALMON</h2>
+        <p data-i18n="menu_desc">High gastronomy in every bite. Textures, temperatures, and perfect balance with white wines.</p>
       </div>
 
       <!-- Category Switcher -->
-      <nav class="category-nav">
-        <button class="category-btn" data-category="tuna" style="display: none;">Bluefin Tuna Collection</button>
-        <button class="category-btn active" data-category="salmon">Salmon Collection</button>
-      </nav>
-
       <div class="menu-grid">
-        {dishes.map(({ key, dish }) => <MenuCard id={key} dish={dish} style={`display: ${dish.category === "salmon" ? "block" : "none"}`} />)}
+        {dishes.map(({ key, dish }) => <MenuCard id={key} dish={dish} />)}
       </div>
     </div>
   </section>
@@ -69,30 +76,31 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
         <!-- Image Container (Shrinks and slides up) -->
         <div class="modal-image-box">
           <img id="modal-img" src="" alt="" />
-          <button class="btn-info-trigger">INFO & TECHNICAL SHEET</button>
-          <button class="btn-close-sheet">VIEW IMAGE ONLY</button>
+
+          <button class="btn-info-trigger" data-i18n="btn_info">INFO & TECHNICAL SHEET</button>
+          <button class="btn-close-sheet" data-i18n="btn_image">VIEW IMAGE ONLY</button>
         </div>
 
         <!-- Technical Card (Slides up from below) -->
         <div class="modal-tech-card">
           <div class="ficha-header">
-            <span class="ficha-label">KITCHEN TECHNICAL SHEET</span>
+            <span class="ficha-label" data-i18n="modal_label">KITCHEN TECHNICAL SHEET</span>
             <h2 id="modal-title"></h2>
             <div class="ficha-meta">
-              <span><strong>Servings:</strong> 1 person</span>
-              <span><strong>Prep Time:</strong> &lt; 5 min</span>
+              <span><strong data-i18n="modal_servings">Servings:</strong> 1 person</span>
+              <span><strong data-i18n="modal_prep">Prep Time:</strong> &lt; 5 min</span>
             </div>
           </div>
 
           <div class="ficha-body">
             <div class="ficha-column">
-              <h3><span class="icon">🥗</span> INGREDIENTS</h3>
+              <h3><span class="icon">🥗</span> <span data-i18n="modal_ingredients">INGREDIENTS</span></h3>
               <ul id="modal-ingredients" class="kitchen-list"></ul>
             </div>
             <div class="ficha-column">
-              <h3><span class="icon">🍳</span> PREPARATION</h3>
+              <h3><span class="icon">🍳</span> <span data-i18n="modal_prep_title">PREPARATION</span></h3>
               <div class="sauce-block">
-                <h4>Sauce & Base:</h4>
+                <h4 data-i18n="modal_sauce_label">Sauce & Base:</h4>
                 <p id="modal-sauce"></p>
               </div>
               <ol id="modal-steps" class="kitchen-steps"></ol>
@@ -100,21 +108,21 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
           </div>
 
           <div class="ficha-equipment">
-            <h3><span class="icon">🛠️</span> EQUIPMENT</h3>
+            <h3><span class="icon">🛠️</span> <span data-i18n="modal_equipment">EQUIPMENT</span></h3>
             <p id="modal-equi"></p>
           </div>
 
           <div class="ficha-footer">
             <div class="cost-item">
-              <span class="label">FOOD COST (MATERIA PRIMA)</span>
+              <span class="label" data-i18n="modal_cost_label">FOOD COST (MATERIA PRIMA)</span>
               <span id="modal-cost" class="value"></span>
             </div>
             <div class="cost-item">
-              <span class="label">PVP (PRECIO VENTA)</span>
+              <span class="label" data-i18n="modal_pvp_label">PVP (PRECIO VENTA)</span>
               <span id="modal-pvp" class="value highlight"></span>
             </div>
             <div class="cost-item highlight-box">
-              <span class="label">PROFIT MARGIN</span>
+              <span class="label" data-i18n="modal_margin_label">PROFIT MARGIN</span>
               <span id="modal-margin" class="value profit"></span>
             </div>
           </div>
@@ -129,9 +137,9 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
     <div class="atmosphere-overlay"></div>
     <div class="container relative">
       <div class="section-title">
-        <span class="eyebrow">The Vibe</span>
-        <h2>More Than Just Food</h2>
-        <p>13 Degrees is where Estepona’s soul meets high-end mixology and vibrant social life.</p>
+        <span class="eyebrow" data-i18n="vibe_eyebrow">The Vibe</span>
+        <h2 data-i18n="vibe_title">More Than Just Food</h2>
+        <p data-i18n="vibe_desc">13 Degrees is where Estepona’s soul meets high-end mixology and vibrant social life.</p>
       </div>
 
       <div class="lifestyle-grid">
@@ -154,21 +162,218 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
   <!-- Final CTA Section -->
   <section class="cta-banner reveal">
     <div class="container text-center">
-      <h2>YOUR MENU COULD BE LIKE THIS TOMORROW</h2>
-      <p>We created a system where premium product (tuna & salmon) meets smart technology. No extra staff. No waste. Only taste and profit.</p>
-      <a href="https://wa.me/48537617365" target="_blank" class="btn-primary">Discuss launch with Julia</a>
+      <h2 data-i18n="cta_title">YOUR MENU COULD BE LIKE THIS TOMORROW</h2>
+      <p data-i18n="cta_desc">We created a system where premium product (tuna & salmon) meets smart technology. No extra staff. No waste. Only taste and profit.</p>
+      <a href="https://wa.me/48537617365" target="_blank" class="btn-primary" data-i18n="cta_btn">Discuss launch with Julia</a>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
       <h2>13 DEGREES | LOUNGE BAR</h2>
-      <p>Full project developed for 13 Degrees Lounge BAR.</p>
+      <p data-i18n="footer_text">Full project developed for 13 Degrees Lounge BAR.</p>
     </div>
   </footer>
 
   <script define:vars={{ dishData }}>
+    // TRANSLATIONS DATA
+    const translations = {
+      en: {
+        hero_eyebrow: "Exclusive Presentation",
+        hero_title: "13 Degrees: <br /><span class='highlight'>The Exclusive Collections</span>",
+        hero_desc: "Smart Luxury Concept: High-end gastronomy with zero kitchen stress.",
+        hero_btn: "Explore the Menu",
+        intro_title: "The Concept: <br />“Raw, Rare & Crispy”",
+        intro_desc:
+          "We combine the prestige of Bluefin Tuna with high-precision technology (Sous-Vide, Aburi, Slicing) to deliver Michelin-level quality without the need for a full stovetop kitchen.",
+        feat_vip_title: "VIP Aesthetics",
+        feat_vip_desc: "Plating designed for the Balearic/Estepona upscale lifestyle.",
+        feat_ops_title: "Smart Ops",
+        feat_ops_desc: "90% prep, 10% service. No stress for the chef during peak hours.",
+        menu_title: "NORDIC & ASIAN FUSION: SALMON",
+        menu_desc: "High gastronomy in every bite. Textures, temperatures, and perfect balance with white wines.",
+        btn_info: "INFO & TECHNICAL SHEET",
+        btn_image: "VIEW IMAGE ONLY",
+        modal_label: "KITCHEN TECHNICAL SHEET",
+        modal_servings: "Servings:",
+        modal_prep: "Prep Time:",
+        modal_ingredients: "INGREDIENTS",
+        modal_prep_title: "PREPARATION",
+        modal_sauce_label: "Sauce & Base:",
+        modal_equipment: "EQUIPMENT",
+        modal_cost_label: "FOOD COST",
+        modal_pvp_label: "PVP (SALE PRICE)",
+        modal_margin_label: "PROFIT MARGIN",
+        vibe_eyebrow: "The Vibe",
+        vibe_title: "More Than Just Food",
+        vibe_desc: "13 Degrees is where Estepona’s soul meets high-end mixology and vibrant social life.",
+        cta_title: "YOUR MENU COULD BE LIKE THIS TOMORROW",
+        cta_desc: "We created a system where premium product (tuna & salmon) meets smart technology. No extra staff. No waste. Only taste and profit.",
+        cta_btn: "Discuss launch with Julia",
+        footer_text: "Full project developed for 13 Degrees Lounge BAR.",
+        view_details: "VIEW DETAILS",
+        wine_pairing: "Wine Pairing:",
+      },
+      es: {
+        hero_eyebrow: "Presentación Exclusiva",
+        hero_title: "13 Degrees: <br /><span class='highlight'>Las Colecciones Exclusivas</span>",
+        hero_desc: "Concepto Smart Luxury: Gastronomía de alta gama con cero estrés en cocina.",
+        hero_btn: "Explorar el Menú",
+        intro_title: "El Concepto: <br />“Raw, Rare & Crispy”",
+        intro_desc: "Combinamos el prestigio del Atún Rojo con tecnología de alta precisión (Sous-Vide, Aburi, Corte) para ofrecer calidad Michelin sin necesidad de fogones.",
+        feat_vip_title: "Estética VIP",
+        feat_vip_desc: "Emplatado diseñado para el estilo de vida exclusivo de Estepona/Baleares.",
+        feat_ops_title: "Operativa Inteligente",
+        feat_ops_desc: "90% prep, 10% servicio. Sin estrés para el chef en horas punta.",
+        menu_title: "FUSIÓN NÓRDICA Y ASIÁTICA: SALMÓN",
+        menu_desc: "Alta gastronomía en cada bocado. Texturas, temperaturas y equilibrio perfecto con vinos blancos.",
+        btn_info: "INFO Y FICHA TÉCNICA",
+        btn_image: "VER SOLO IMAGEN",
+        modal_label: "FICHA TÉCNICA DE COCINA",
+        modal_servings: "Raciones:",
+        modal_prep: "Tiempo Prep:",
+        modal_ingredients: "INGREDIENTES",
+        modal_prep_title: "PREPARACIÓN",
+        modal_sauce_label: "Salsa y Base:",
+        modal_equipment: "EQUIPAMIENTO",
+        modal_cost_label: "COSTE MP",
+        modal_pvp_label: "PVP (PRECIO VENTA)",
+        modal_margin_label: "MARGEN BENEFICIO",
+        vibe_eyebrow: "El Ambiente",
+        vibe_title: "Más que solo comida",
+        vibe_desc: "13 Degrees es donde el alma de Estepona se encuentra con la alta coctelería y la vida social vibrante.",
+        cta_title: "TU MENÚ PODRÍA SER ASÍ MAÑANA",
+        cta_desc: "Creamos un sistema donde el producto premium (atún y salmón) se une a la tecnología inteligente. Sin personal extra. Sin mermas. Solo sabor y beneficio.",
+        cta_btn: "Hablar del lanzamiento con Julia",
+        footer_text: "Proyecto completo desarrollado para 13 Degrees Lounge BAR.",
+        view_details: "VER DETALLES",
+        wine_pairing: "Maridaje:",
+      },
+      ru: {
+        hero_eyebrow: "Эксклюзивная Презентация",
+        hero_title: "13 Degrees: <br /><span class='highlight'>Эксклюзивные Коллекции</span>",
+        hero_desc: "Концепция Smart Luxury: Высокая гастрономия без стресса на кухне.",
+        hero_btn: "Смотреть Меню",
+        intro_title: "Концепция: <br />“Raw, Rare & Crispy”",
+        intro_desc: "Мы объединяем престиж Голубого Тунца с высокими технологиями (Су-вид, Абури, Нарезка), чтобы дать качество уровня Michelin без полноценной горячей кухни.",
+        feat_vip_title: "VIP Эстетика",
+        feat_vip_desc: "Подача, созданная для роскошного стиля жизни Эстепоны и Балеар.",
+        feat_ops_title: "Умная Операционка",
+        feat_ops_desc: "90% заготовка, 10% сервис. Никакого стресса для шефа в час пик.",
+        menu_title: "СЕВЕРЫЙ И АЗИАТСКИЙ ФЬЮЖН: ЛОСОСЬ",
+        menu_desc: "Высокая гастрономия в каждом кусочке. Текстуры, температуры и идеальный баланс с белыми винами.",
+        btn_info: "ИНФО И ТЕХ. КАРТА",
+        btn_image: "ТОЛЬКО ФОТО",
+        modal_label: "ТЕХНИЧЕСКАЯ КАРТА БЛЮДА",
+        modal_servings: "Порции:",
+        modal_prep: "Время преп:",
+        modal_ingredients: "ИНГРЕДИЕНТЫ",
+        modal_prep_title: "ПРИГОТОВЛЕНИЕ",
+        modal_sauce_label: "Соус и Основа:",
+        modal_equipment: "ОБОРУДОВАНИЕ",
+        modal_cost_label: "СЕБЕСТОИМОСТЬ",
+        modal_pvp_label: "ЦЕНА ПРОДАЖИ",
+        modal_margin_label: "МАРЖА (ПРИБЫЛЬ)",
+        vibe_eyebrow: "Атмосфера",
+        vibe_title: "Больше, чем просто еда",
+        vibe_desc: "13 Degrees — это место, где душа Эстепоны встречается с высокой миксологией и яркой светской жизнью.",
+        cta_title: "ВАШЕ МЕНЮ МОЖЕТ БЫТЬ ТАКИМ УЖЕ ЗАВТРА",
+        cta_desc: "Мы создали систему, где премиальный продукт (тунец и лосось) встречается с умными технологиями. Без лишнего персонала. Без списаний. Только вкус и прибыль.",
+        cta_btn: "Обсудить запуск с Юлией",
+        footer_text: "Полный проект разработан для 13 Degrees Lounge BAR.",
+        view_details: "ДЕТАЛИ",
+        wine_pairing: "Винная пара:",
+      },
+    };
+
+    let currentLang = "en"; // Default language
+
     document.addEventListener("DOMContentLoaded", () => {
+      // --- Language Switching Logic ---
+      const langBtns = document.querySelectorAll(".lang-btn");
+      const i18nElements = document.querySelectorAll("[data-i18n]");
+
+      // Helper to update text content with smooth fade
+      const updateLanguage = (lang) => {
+        if (currentLang === lang) return; // No change needed
+
+        currentLang = lang;
+        const t = translations[lang];
+
+        // Collect all elements to animate
+        const elementsToUpdate = [];
+
+        // 1. Static Text Elements
+        i18nElements.forEach((el) => elementsToUpdate.push(el));
+
+        // 2. Dynamic Dish Cards (Titles, Desc, Pairings)
+        document.querySelectorAll(".menu-card").forEach((card) => {
+          const titleEl = card.nextElementSibling.querySelector(".js-dish-title");
+          const descEl = card.nextElementSibling.querySelector(".js-dish-desc");
+          const pairEl = card.nextElementSibling.querySelector(".js-dish-pairing");
+          const overlayEl = card.querySelector('[data-i18n="view_details"]');
+
+          if (titleEl) elementsToUpdate.push(titleEl);
+          if (descEl) elementsToUpdate.push(descEl);
+          if (pairEl) elementsToUpdate.push(pairEl);
+          if (overlayEl) elementsToUpdate.push(overlayEl);
+        });
+
+        // Start Fade Out
+        elementsToUpdate.forEach((el) => {
+          el.classList.add("lang-fade");
+          el.classList.add("fade-out");
+        });
+
+        // Wait for fade out, then update text and fade in
+        setTimeout(() => {
+          // Update Static
+          i18nElements.forEach((el) => {
+            const key = el.dataset.i18n;
+            if (t[key]) {
+              el.innerHTML = t[key];
+            }
+          });
+
+          // Update Dynamic
+          document.querySelectorAll(".menu-card").forEach((card) => {
+            const dishKey = card.dataset.dish;
+            const data = dishData[dishKey];
+            if (data) {
+              const titleEl = card.nextElementSibling.querySelector(".js-dish-title");
+              // Use default (English) if translation missing
+              const getField = (field) => (lang === "en" ? data[field] : data[`${field}_${lang}`] || data[field]);
+
+              if (titleEl) titleEl.textContent = getField("title");
+
+              const descEl = card.nextElementSibling.querySelector(".js-dish-desc");
+              if (descEl) descEl.textContent = getField("description");
+
+              const pairEl = card.nextElementSibling.querySelector(".js-dish-pairing");
+              if (pairEl) pairEl.textContent = getField("winePairing");
+            }
+          });
+
+          // Fade In
+          elementsToUpdate.forEach((el) => {
+            el.classList.remove("fade-out");
+          });
+        }, 300); // 300ms matches CSS transition
+
+        // 3. Update active button state immediately
+        langBtns.forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.lang === lang);
+        });
+      };
+
+      // Listeners for buttons
+      langBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const lang = btn.dataset.lang;
+          updateLanguage(lang);
+        });
+      });
+
       const modal = document.getElementById("modal");
       const modalContent = document.querySelector(".modal-content");
       const modalImg = document.getElementById("modal-img");
@@ -232,12 +437,19 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
         const data = dishData[dishKey];
 
         if (data) {
+          // Determine localized data based on currentLang
+          const title = currentLang === "en" ? data.title : data[`title_${currentLang}`] || data.title;
+          const ingredients = currentLang === "en" ? data.ingredients : data[`ingredients_${currentLang}`] || data.ingredients;
+          const sauce = currentLang === "en" ? data.sauce : data[`sauce_${currentLang}`] || data.sauce;
+          const steps = currentLang === "en" ? data.steps : data[`steps_${currentLang}`] || data.steps;
+          const equipment = currentLang === "en" ? data.equipment : data[`equipment_${currentLang}`] || data.equipment;
+
           modalImg.src = data.img;
-          modalTitle.textContent = data.title;
-          modalIngredients.innerHTML = data.ingredients.map((i) => `<li>${i}</li>`).join("");
-          modalSauce.innerHTML = data.sauce;
-          modalSteps.innerHTML = data.steps.map((s) => `<li>${s}</li>`).join("");
-          modalEqui.textContent = data.equipment;
+          modalTitle.textContent = title;
+          modalIngredients.innerHTML = ingredients.map((i) => `<li>${i}</li>`).join("");
+          modalSauce.innerHTML = sauce;
+          modalSteps.innerHTML = steps.map((s) => `<li>${s}</li>`).join("");
+          modalEqui.textContent = equipment;
           modalCost.textContent = data.cost;
           modalPvp.textContent = data.pvp;
           modalMargin.textContent = data.margin;
@@ -251,20 +463,38 @@ const dishes = Object.entries(dishData).map(([key, dish]) => ({ key, dish }));
       // 4. Modal Interactions
       const btnInfo = document.querySelector(".btn-info-trigger");
       if (btnInfo) {
-        btnInfo.addEventListener("click", () => {
+        btnInfo.addEventListener("click", (e) => {
+          // Prevent bubbling
+          e.stopPropagation();
           modalContent.classList.add("sheet-active");
         });
       }
 
+      // TAP IMAGE TO TOGGLE SHEET (Mobile Friendly)
+      document.querySelector(".modal-image-box").addEventListener("click", (e) => {
+        // Don't trigger if clicking buttons
+        if (e.target.closest("button")) return;
+
+        e.stopPropagation();
+        // Toggle sheet state
+        if (modalContent.classList.contains("sheet-active")) {
+          modalContent.classList.remove("sheet-active");
+        } else {
+          modalContent.classList.add("sheet-active");
+        }
+      });
+
       const btnCloseSheet = document.querySelector(".btn-close-sheet");
       if (btnCloseSheet) {
-        btnCloseSheet.addEventListener("click", () => {
+        btnCloseSheet.addEventListener("click", (e) => {
+          e.stopPropagation();
           modalContent.classList.remove("sheet-active");
         });
       }
 
       const closeModal = () => {
         modal.classList.remove("active");
+        modalContent.classList.remove("sheet-active"); // Reset sheet
         document.body.classList.remove("modal-open");
       };
 

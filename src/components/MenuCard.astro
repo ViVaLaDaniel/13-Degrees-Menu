@@ -13,14 +13,16 @@ const { id, dish, ...rest } = Astro.props;
 <article class="menu-card reveal" data-dish={id} data-category={dish.category} {...rest}>
   <div class="card-img-wrapper">
     <img src={dish.img} alt={dish.title} loading="lazy" decoding="async" />
-    <span>Discover</span>
+    <div class="card-overlay">
+      <span data-i18n="view_details">VIEW DETAILS</span>
+    </div>
   </div>
 </article>
 <div class="card-content">
-  <h3>{dish.title}</h3>
-  <p class="description">{dish.description}</p>
+  <h3 class="js-dish-title">{dish.title}</h3>
+  <p class="description js-dish-desc">{dish.description}</p>
   <div class="pairing">
-    <strong>Wine Pairing:</strong>
-    {dish.winePairing}
+    <strong data-i18n="wine_pairing">Wine Pairing:</strong>
+    <span class="js-dish-pairing">{dish.winePairing}</span>
   </div>
 </div>
