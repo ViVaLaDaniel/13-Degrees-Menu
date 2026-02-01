@@ -1,0 +1,27 @@
+---
+import type { Dish } from '../data/dishes';
+
+interface Props {
+  id: string;
+  dish: Dish;
+  [key: string]: any; // Allow other props like style
+}
+
+const { id, dish, ...rest } = Astro.props;
+---
+
+<article class="menu-card reveal" data-dish={id} data-category={dish.category} {...rest}>
+    <div class="card-img-wrapper">
+        <img src={dish.img} alt={dish.title} loading="lazy" decoding="async">
+        <div class="card-overlay">
+            <span>Open Details</span>
+        </div>
+    </div>
+    <div class="card-content">
+        <h3>{dish.title}</h3>
+        <p class="description">{dish.description}</p>
+        <div class="pairing">
+            <strong>Wine Pairing:</strong> {dish.winePairing}
+        </div>
+    </div>
+</article>
