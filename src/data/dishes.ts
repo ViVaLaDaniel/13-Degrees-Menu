@@ -150,7 +150,7 @@ export const dishData: Record<string, Dish> = {
     },
     'salmon-nordic': {
         category: 'salmon',
-        title: 'Salmon Mi-Cuit "Velvet Texture"',
+        title: 'Salmón "Terciopelo" (Nordic Velvet)',
         description: 'Salmon "Mi-Cuit" (medium rare). Butter-like texture, dill emulsion, and horseradish snow.',
         winePairing: 'Chardonnay / Chablis',
         img: '/assets/salmon_velvet.png',
@@ -176,7 +176,7 @@ export const dishData: Record<string, Dish> = {
     },
     'salmon-rosette': {
         category: 'salmon',
-        title: 'Beetroot Gravlax "Ruby Ribbon"',
+        title: 'Gravlax "Cinta de Rubí" (Ruby Ribbon)',
         description: 'Salmon cured in beetroot and gin, sliced paper-thin. Cream cheese and zest.',
         winePairing: 'Rosé / Pinot Grigio',
         img: '/assets/salmon_gravlax.png',
@@ -201,7 +201,7 @@ export const dishData: Record<string, Dish> = {
     },
     'salmon-miso': {
         category: 'salmon',
-        title: 'Miso Salmon "Fire & Ice"',
+        title: 'Miso Salmón "Fuego y Hielo" (Fire & Ice)',
         description: 'Chilled salmon slice in miso glaze, caramelized by open fire.',
         winePairing: 'Riesling / Gewürztraminer',
         img: '/assets/salmon_miso.png',
@@ -226,7 +226,7 @@ export const dishData: Record<string, Dish> = {
     },
     'salmon-avocado': {
         category: 'salmon',
-        title: 'Smoked Salmon & Avocado "Rosette"',
+        title: 'Rosa "Jardín de Mar" (Sea Garden)',
         description: 'Salad constructor. Deconstructed presentation: salmon roses, avocado fan, and ice onion.',
         winePairing: 'Sauvignon Blanc / Verdejo',
         img: '/assets/salmon_avocado_rosette.png',
@@ -254,7 +254,7 @@ export const dishData: Record<string, Dish> = {
     },
     'salmon-prawns': {
         category: 'salmon',
-        title: 'Royal Prawns & Salmon "Imperial"',
+        title: 'Dúo "Imperial" (Royal Prawns & Salmon)',
         description: 'King prawns stuffed with garlic butter, under a "lid" of salmon in oyster glaze.',
         winePairing: 'Chardonnay (Oaked) / Cava',
         img: '/assets/salmon_prawns_vasily.png',
@@ -281,7 +281,7 @@ export const dishData: Record<string, Dish> = {
     },
     'prawn-carpaccio': {
         category: 'salmon',
-        title: 'Gambero Rosso "Carpaccio"',
+        title: 'Gambero "Seda Roja" (Red Silk Carpaccio)',
         description: 'Carpaccio of Gambero Rosso red prawn. Sweet as fruit. Citrus oil and flowers.',
         winePairing: 'Albariño / Godello',
         img: '/assets/prawn_carpaccio.png',
@@ -305,39 +305,13 @@ export const dishData: Record<string, Dish> = {
         pvp: '€29.00',
         margin: '+€20.50'
     },
-    'salmon-wellington': {
-        category: 'salmon',
-        title: 'Mini Salmon Wellington',
-        description: 'Golden pastry with salmon and spinach. Served with saffron Beurre Blanc sauce.',
-        winePairing: 'Chardonnay (Buttery) / Viognier',
-        img: '/assets/salmon_wellington_saffron.png',
-        ingredients: [
-            '120g Salmon Fillet (Center Cut)',
-            '50g Puff Pastry (All-butter)',
-            '30g Spinach & Ricotta Mix',
-            '1 Egg Yolk (Glaze)',
-            'Saffron Threads',
-            'Rosemary Sprig'
-        ],
-        sauce: '<strong>Saffron Beurre Blanc:</strong> Classic French butter sauce with reduced white wine, cream, and saffron. Bright yellow color and luxurious aroma.',
-        steps: [
-            'Blanch spinach with cream and ricotta (filling).',
-            'Wrap salmon fillet in filling, then in pastry (form individual "pie").',
-            'Brush with egg yolk, score with a "net" pattern.',
-            'Bake 15 min at 200°C until golden.',
-            'Plating: Pour a lake of sauce on the plate, place hot Wellington on top.'
-        ],
-        equipment: 'Oven (Convection), Brush.',
-        cost: '€5.90',
-        pvp: '€24.00',
-        margin: '+€18.10'
-    },
+
     'salmon-purple': {
         category: 'salmon',
-        title: 'Smoked Salmon & Purple "Violet"',
+        title: 'Sinfonía "Violeta Real" (Royal Violet)',
         description: 'Smoked salmon roses, purple potato, avocado, and honey-mustard emulsion.',
         winePairing: 'Sauvignon Blanc / Rosé de Provence',
-        img: '/assets/salmon_purple_potato.png',
+        img: '/assets/salmon_purple_black_plate.png',
         ingredients: [
             '120g Smoked Salmon (Premium)',
             '1 Avocado (Hass)',
@@ -362,7 +336,7 @@ export const dishData: Record<string, Dish> = {
     },
     'salmon-tournedos': {
         category: 'salmon',
-        title: 'Salmon Tournedos "Citrus Gold"',
+        title: 'Tournedó "Oro Cítrico" (Citrus Gold)',
         description: '"Fish Mignon". Sous-vide salmon steak, glazed with orange and chili. Served hot.',
         winePairing: 'Chardonnay (Oaked) / Riesling',
         img: '/assets/salmon_tournedos_gold.png',
@@ -388,7 +362,7 @@ export const dishData: Record<string, Dish> = {
     },
     'salmon-ruby': {
         category: 'salmon',
-        title: 'Salmon "Ruby Glaze" & Batata',
+        title: 'Salmón "Glaseado Rubí" (Pomegranate Glaze)',
         description: 'Salmon in pomegranate glaze with velvet sweet potato puree and parmesan.',
         winePairing: 'Pinot Noir / Full-bodied Rosé',
         img: '/assets/salmon_ruby_glaze.png',
@@ -415,7 +389,7 @@ export const dishData: Record<string, Dish> = {
     },
     'salmon-emerald': {
         category: 'salmon',
-        title: 'Salmon "Emerald Crust"',
+        title: 'Costra "Esmeralda" (Emerald Crust)',
         description: 'Baked salmon under a warm avocado-spinach mousse with a crunchy pistachio crust.',
         winePairing: 'Sauvignon Blanc / Vermentino',
         img: '/assets/salmon_emerald_crust.png',
